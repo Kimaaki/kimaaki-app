@@ -1,21 +1,15 @@
 import { createClient } from '@supabase/supabase-js'
 
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL
-const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
-
-// Debug útil no build da Vercel
-console.log('NEXT_PUBLIC_SUPABASE_URL:', supabaseUrl ? '✅ OK' : '❌ MISSING')
-console.log('NEXT_PUBLIC_SUPABASE_ANON_KEY:', supabaseAnonKey ? '✅ OK' : '❌ MISSING')
+// Pega variáveis direto de process.env
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL as string
+const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY as string
 
 if (!supabaseUrl || !supabaseAnonKey) {
-  // Evita quebrar o build
-  console.warn('⚠️ Supabase env vars faltando no build. Verifique Settings → Environment Variables.')
+  throw new Error("❌ Supabase environment variables are missing.")
 }
 
-export const supabase = createClient(
-  supabaseUrl || 'https://example.supabase.co',   // placeholder só para build
-  supabaseAnonKey || 'invalid'
-)
+// Cria cliente Supabase
+export const supabase = createClient(supabaseUrl, supabaseAnonKey)
 
 // Tipos para o banco de dados
 export interface UserProfile {
