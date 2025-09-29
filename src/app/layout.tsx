@@ -45,6 +45,7 @@ export default function RootLayout({
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
         <meta name="apple-mobile-web-app-title" content="KIMAAKI" />
         <meta name="mobile-web-app-capable" content="yes" />
+        <link rel="icon" href="/icon.png" type="image/png" />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
