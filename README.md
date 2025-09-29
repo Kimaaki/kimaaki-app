@@ -1,4 +1,4 @@
-# KIMAAKI - Plataforma de Delivery Multi-Categoria
+# KIMAAKI - Marketplace de Delivery Multicategoria On-Demand
 
 🚀 **KIMAAKI** é uma plataforma completa de delivery desenvolvida especialmente para Angola e África, conectando clientes, empresas e entregadores em um ecossistema integrado.
 
