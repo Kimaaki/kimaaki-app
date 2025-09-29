@@ -1,0 +1,16 @@
+{
+  "name": "KIMAAKI",
+  "short_name": "KIMAAKI",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#4CAF50",
+  "description": "Entrega rápida na sua porta em Luanda",
+  "icons": [
+    {
+      "src": "/icon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
