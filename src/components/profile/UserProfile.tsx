@@ -250,26 +250,27 @@ export function UserProfile({ userId, onClose }: UserProfileProps) {
     }
     return statusMap[status] || status
   }
-
-  if (loading) {
-    return (
-      <div className="flex items-center justify-center p-8">
-        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-[#28a745]"></div>
-      </div>
-    )
-  }
+if (loading) {
+  return (
+    <div className="flex items-center justify-center p-8">
+      <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-[#28a745]"></div>
+    </div>
+  )
+}
 
   return (
-    <div className="flex items-center justify-between gap-2">
-  <h1 className="text-2xl font-bold text-gray-900 dark:text-gray-100">Meu Perfil</h1>
-  <div className="flex items-center gap-2">
-    <LogoutButton />
-    <Button variant="ghost" onClick={onClose}>
-      ✕
-    </Button>
-  </div>
-</div>
-
+    <div className="max-w-4xl mx-auto p-4 space-y-6">
+      <div className="flex items-center justify-between gap-2">
+        <h1 className="text-2xl font-bold text-gray-900 dark:text-gray-100">
+          Meu Perfil
+        </h1>
+        <div className="flex items-center gap-2">
+          <LogoutButton />
+          <Button variant="ghost" onClick={onClose}>
+            ✕
+          </Button>
+        </div>
+      </div>
       <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
         <TabsList className="grid w-full grid-cols-4">
           <TabsTrigger value="profile" className="flex items-center gap-2">
